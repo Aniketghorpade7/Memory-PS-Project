@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My College Journey</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <header>
+    <h1>My College Journey</h1>
+  </header>
+  <div class="timeline">
+    <div class="curve-path">
+      <svg viewBox="0 0 1000 2600" preserveAspectRatio="xMidYMin meet">
+        <path d="M500,0 C700,400 300,800 500,1200 C700,1600 300,2000 500,2400" 
+              stroke="var(--accent)" 
+              fill="transparent" 
+              stroke-width="8" 
+              stroke-linecap="round" 
+              stroke-dasharray="15,10"/>
+      </svg>
+    </div>
+    <div class="timeline-content" id="timeline"></div>
+  </div>
+
+  <script>
+    const positions = [
+      { top: '100px', left: '62%' },
+      { top: '520px', left: '18%' },
+      { top: '940px', left: '60%' },
+      { top: '1360px', left: '25%' },
+      { top: '1780px', left: '60%' }
+    ];
+
+    const events = [
+      {
+        title: "Orientation Day",
+        date: "Sept 1, 2024",
+        year: "2024",
+        description: "Meeting new friends and exploring campus for the first time.",
+        image: "https://source.unsplash.com/featured/?students,campus"
+      },
+      {
+        title: "First Lecture",
+        date: "Sept 3, 2024",
+        year: "2024",
+        description: "Excited and nervous as the college life officially begins.",
+        image: "https://source.unsplash.com/featured/?lecture,classroom"
+      },
+      {
+        title: "Coffee Breaks",
+        date: "Sept 15, 2024",
+        year: "2024",
+        description: "Favorite study spot with my go-to coffee order.",
+        image: "https://source.unsplash.com/featured/?coffee,study"
+      },
+      {
+        title: "College Fest",
+        date: "Oct 10, 2024",
+        year: "2024",
+        description: "Vibrant atmosphere, music, and a lot of dancing!",
+        image: "https://source.unsplash.com/featured/?college,festival"
+      },
+      {
+        title: "Group Project",
+        date: "Nov 5, 2024",
+        year: "2024",
+        description: "Late nights, teamwork, and the sweet joy of submission.",
+        image: "https://source.unsplash.com/featured/?students,project"
+      }
+    ];
+
+    const timeline = document.getElementById("timeline");
+
+    events.forEach((event, index) => {
+      const div = document.createElement("div");
+      div.className = `event`;
+      div.style.top = positions[index].top;
+      div.style.left = positions[index].left;
+      div.innerHTML = `
+        <div class="year-pin">${event.year}</div>
+        <h3>${event.title}</h3>
+        <small>${event.date}</small>
+        <p>${event.description}</p>
+        <img src="${event.image}" alt="${event.title}" />
+      `;
+      timeline.appendChild(div);
+    });
+  </script>
+</body>
+</html>

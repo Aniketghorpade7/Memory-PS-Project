@@ -1,0 +1,172 @@
+    :root {
+      --primary: #fef9e7;
+      --accent: #00bfa6;
+      --background: #fffaf0;
+      --text-dark: #3e3e3e;
+      --note-edge: #e0c097;
+      --pin-color: #d94f4f;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--accent), #3f87a6);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .timeline {
+      position: relative;
+      padding: 4rem 1rem;
+      overflow-x: hidden;
+      max-width: 1000px;
+      margin: auto;
+      height: 2600px;
+    }
+
+    .curve-path {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .timeline-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .event {
+      position: absolute;
+      background: #fef9e7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      border: 2px solid var(--note-edge);
+      box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      width: 280px;
+      transform: rotate(-2deg);
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--pin-color);
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+
+    .event:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .event h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .event small {
+      display: block;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .event p {
+      line-height: 1.5;
+    }
+
+    .event img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .year-pin {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .timeline {
+        height: auto;
+        padding-bottom: 3rem;
+      }
+      .event {
+        width: 90%;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 2rem auto;
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .event h3 {
+        font-size: 1.25rem;
+      }
+      .event p {
+        font-size: 0.9rem;
+      }
+    }
+    
+    body {
+        overflow: auto; /* Allows scrolling */
+      }
+      
+      ::-webkit-scrollbar {
+        display: none; /* Hides the scrollbar in WebKit browsers */
+      }
+      
+      body {
+        -ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer */
+        scrollbar-width: none; /* Hides the scrollbar in Firefox */
+      }
