@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Start Your Journey</title>
+  <style>
+    :root {
+      --bg-light: #fff9ee;
+      --accent: #00bfa6;
+      --text-dark: #333;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: radial-gradient(circle at 20% 20%, #fffdf6 0%, #f7f1e3 100%);
+      animation: moveBackground 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-10%, -10%);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .container {
+      background: #fffdf6;
+      padding: 2rem 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 25px var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="home.html">
+    <div class="container">
+      <h1>Start My College Journey</h1>
+    </div>
+  </a>
+</body>
+</html>
+
