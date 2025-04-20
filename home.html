@@ -5,6 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My College Journey</title>
   <link rel="stylesheet" href="home.css">
+  <style>
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0); 
+      background-color: rgba(0, 0, 0, 0.9); 
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,56 +63,82 @@
       </svg>
     </div>
   
-<div class="timeline-content">
-    <div class="event" style="top: 100px; left: 62%;">
-      <div class="year-pin">2024</div>
-      <h3>Induction Day</h3>
-      <small>Sept 17, 2024</small>
-      <p>Meeting new friends and exploring campus for the first time.</p>
-      <img src="Images/Induction.png" alt="Induction Day">
+    <div class="timeline-content">
+      <div class="event" style="top: 100px; left: 62%;">
+        <div class="year-pin">2024</div>
+        <h3>Induction Day</h3>
+        <small>Sept 17, 2024</small>
+        <p>Meeting new friends and exploring campus for the first time.</p>
+        <img src="Images/Induction.png" alt="Induction Day" class="event-img">
+      </div>
+
+      <div class="event" style="top: 520px; left: 18%;">
+        <div class="year-pin">2024</div>
+        <h3>Dadiya Night</h3>
+        <small>Oct 11, 2024</small>
+        <p>Excited and nervous as it was first social interaction of whole class.</p>
+        <img src="Images/Dandiya.png" alt="Dadiya Night" class="event-img">
+      </div>
+
+      <div class="event" style="top: 940px; left: 60%;">
+        <div class="year-pin">2024</div>
+        <h3>Freshers Party</h3>
+        <small>Sept 15, 2024</small>
+        <p>An epic night of dancing, laughter, and finally feeling like college has really begun!</p>
+        <img src="Images/Freasher.png" alt="Freshers" class="event-img">
+      </div>
+
+      <div class="event" style="top: 1780px; left: 60%;">
+        <div class="year-pin">2025</div>
+        <h3>One SEM Down</h3>
+        <small>Jan 8, 2025</small>
+        <p>The end of the semester brought a wave of relief, late-night study memories, and the sweet taste of freedom.</p>
+        <img src="Images/sem end.png" alt="End SEM" class="event-img">
+      </div>
+
+      <div class="event" style="top: 1360px; left: 25%;">
+        <div class="year-pin">2025</div>
+        <h3>Walchand Eve</h3>
+        <small>Feb 20, 2025</small>
+        <p>The Walchand Eve was a high-energy night filled with electrifying performances, music, and unforgettable vibes.</p>
+        <img src="Images/Eve.png" alt="Walchand Eve" class="event-img">
+      </div>
     </div>
   </div>
 
-    <div class="event" style="top: 520px; left: 18%;">
-      <div class="year-pin">2024</div>
-      <h3>Dadiya Night</h3>
-      <small>Oct 11, 2024</small>
-      <p>Excited and nervous as it was first social interaction of whole class.</p>
-      <img src="Images/Dandiya.png" alt="Dadiya Night">
-    </div>
+  <footer class="footer"></footer>
 
-    <div class="event" style="top: 940px; left: 60%;">
-      <div class="year-pin">2024</div>
-      <h3>Freshers Party</h3>
-      <small>Sept 15, 2024</small>
-      <p>An epic night of dancing, laughter, and finally feeling like college has really begun!</p>
-      <img src="Images/Freasher.png" alt="Freashers">
-    </div>
+  
+  <div id="myModal" class="modal">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
-    <div class="event" style="top: 1780px; left: 60%;">
-      <div class="year-pin">2025</div>
-      <h3>One SEM Down</h3>
-      <small>Jan 8, 2025</small>
-      <p>The end of the semester brought a wave of relief, late-night study memories, and the sweet taste of freedom.</p>
-      <img src="Images/sem end.png" alt="End SEM">
-    </div>
-
-    <div class="event" style="top: 1360px; left: 25%;">
-      <div class="year-pin">2025</div>
-      <h3>Walchand Eve</h3>
-      <small>Feb 20, 2025</small>
-      <p>The Walchand Eve was a high-energy night filled with electrifying performances, music, and unforgettable vibes.</p>
-      <img src="Images/Eve.png" alt="Walchand Eve">
-    </div>
+  <script>
+    
+    var modal = document.getElementById("myModal");
+    var modalImage = document.getElementById("modalImage");
+    var closeModal = document.getElementById("closeModal");
 
     
-  </div>
-</div>
+    document.querySelectorAll('.event-img').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImage.src = this.src; 
+      });
+    });
 
-<footer class="footer">
+    
+    closeModal.addEventListener('click', function() {
+      modal.style.display = "none";
+    });
 
-</footer>
-
-</script>
+    
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>

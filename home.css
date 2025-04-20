@@ -91,7 +91,7 @@
     .event:hover {
       animation: floaty 1.8s ease-in-out infinite alternate;
       transform: rotate(0deg) scale(1.02);
-      z-index: 10; /* optional: to bring hovered note above others */
+      z-index: 10;
     }
     
 
@@ -173,16 +173,16 @@
     
     
     body {
-        overflow: auto; /* Allows scrolling */
+        overflow: auto; 
       }
       
       ::-webkit-scrollbar {
-        display: none; /* Hides the scrollbar in WebKit browsers */
+        display: none; 
       }
       
       body {
-        -ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer */
-        scrollbar-width: none; /* Hides the scrollbar in Firefox */
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
       }
       * {
         margin: 0;
@@ -200,29 +200,7 @@
       
     }
     
-    .background-video {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: fit-content;
-        min-height: fit-content;
-        width: auto;
-        height: auto;
-        z-index: -1; /* Places the video behind other content */
-        transform: translate(-50%, -50%);
-    }
     
-    .content {
-        position: relative;
-        z-index: 1; /* Places content above the video */
-        color: white; /* Text color */
-        text-align: center; /* Center text */
-        padding: 20px;
-    }
-    .button1{
-      background-color: rgba(255, 255, 255, 0.9);
-      color: black;
-      font-size: large;
-    }
-
+    
+    
     
