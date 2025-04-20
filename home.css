@@ -8,6 +8,7 @@
     }
 
     body {
+
       font-family: 'Segoe UI', sans-serif;
       background: var(--background);
       margin: 0;
@@ -170,3 +171,38 @@
         -ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer */
         scrollbar-width: none; /* Hides the scrollbar in Firefox */
       }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        height: 100%;
+        overflow: hidden; /* Prevents scrolling */
+    }
+    
+    .background-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: fit-content;
+        min-height: fit-content;
+        width: auto;
+        height: auto;
+        z-index: -1; /* Places the video behind other content */
+        transform: translate(-50%, -50%);
+    }
+    
+    .content {
+        position: relative;
+        z-index: 1; /* Places content above the video */
+        color: white; /* Text color */
+        text-align: center; /* Center text */
+        padding: 20px;
+    }
+    .button1{
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+      font-size: large;
+    }
