@@ -131,6 +131,14 @@
       font-size: 1.2rem;
     }
 
+    .footer{
+      background: linear-gradient(90deg, var(--accent), #3f87a6);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      color: white;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
@@ -144,6 +152,7 @@
         position: relative !important;
         top: auto !important;
         left: auto !important;
+        bottom: auto !important;
         margin: 2rem auto;
         transform: none !important;
       }
