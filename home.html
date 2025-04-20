@@ -10,6 +10,7 @@
   <header>
     <h1>College Journey</h1>
   </header>
+ 
   <div class="timeline">
     <div class="curve-path">
       <svg viewBox="0 0 1000 2600" preserveAspectRatio="xMidYMin meet">
@@ -21,8 +22,8 @@
               stroke-dasharray="15,10"/>
       </svg>
     </div>
-
-  <div class="timeline-content">
+  
+<div class="timeline-content">
     <div class="event" style="top: 100px; left: 62%;">
       <div class="year-pin">2024</div>
       <h3>Induction Day</h3>
@@ -30,6 +31,7 @@
       <p>Meeting new friends and exploring campus for the first time.</p>
       <img src="Images/Induction.png" alt="Induction Day">
     </div>
+  </div>
 
     <div class="event" style="top: 520px; left: 18%;">
       <div class="year-pin">2024</div>
@@ -70,23 +72,7 @@
 <footer class="footer">
 
 </footer>
-  <script>
-    const timeline = document.getElementById("timeline");
 
-    events.forEach((event, index) => {
-      const div = document.createElement("div");
-      div.className = `event`;
-      div.style.top = positions[index].top;
-      div.style.left = positions[index].left;
-      div.innerHTML = `
-        <div class="year-pin">${event.year}</div>
-        <h3>${event.title}</h3>
-        <small>${event.date}</small>
-        <p>${event.description}</p>
-        <img src="${event.image}" alt="${event.title}" />
-      `;
-      timeline.appendChild(div);
-    });
-  </script>
+</script>
 </body>
 </html>
