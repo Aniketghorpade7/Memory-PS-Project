@@ -196,10 +196,11 @@
         overflow-x: hidden;
         overflow-y: auto;
         scroll-behavior: smooth;
-      
-      
     }
     
+    a{
+      text-decoration: none;
+    }
     
     
     
