@@ -21,56 +21,51 @@
               stroke-dasharray="15,10"/>
       </svg>
     </div>
-    <div class="timeline-content" id="timeline"></div>
+    <!-- <div class="timeline-content" id="timeline"></div>
+  </div> -->
+  <div class="timeline-content">
+    <div class="event" style="top: 100px; left: 62%;">
+      <div class="year-pin">2024</div>
+      <h3>Orientation Day</h3>
+      <small>Sept 1, 2024</small>
+      <p>Meeting new friends and exploring campus for the first time.</p>
+      <img src="https://source.unsplash.com/featured/?students,campus" alt="Orientation Day">
+    </div>
+
+    <div class="event" style="top: 520px; left: 18%;">
+      <div class="year-pin">2024</div>
+      <h3>First Lecture</h3>
+      <small>Sept 3, 2024</small>
+      <p>Excited and nervous as the college life officially begins.</p>
+      <img src="https://source.unsplash.com/featured/?lecture,classroom" alt="First Lecture">
+    </div>
+
+    <div class="event" style="top: 940px; left: 60%;">
+      <div class="year-pin">2024</div>
+      <h3>Coffee Breaks</h3>
+      <small>Sept 15, 2024</small>
+      <p>Favorite study spot with my go-to coffee order.</p>
+      <img src="https://source.unsplash.com/featured/?coffee,study" alt="Coffee Breaks">
+    </div>
+
+    <div class="event" style="top: 1360px; left: 25%;">
+      <div class="year-pin">2024</div>
+      <h3>College Fest</h3>
+      <small>Oct 10, 2024</small>
+      <p>Vibrant atmosphere, music, and a lot of dancing!</p>
+      <img src="https://source.unsplash.com/featured/?college,festival" alt="College Fest">
+    </div>
+
+    <div class="event" style="top: 1780px; left: 60%;">
+      <div class="year-pin">2024</div>
+      <h3>Group Project</h3>
+      <small>Nov 5, 2024</small>
+      <p>Late nights, teamwork, and the sweet joy of submission.</p>
+      <img src="https://source.unsplash.com/featured/?students,project" alt="Group Project">
+    </div>
   </div>
-
+</div>
   <script>
-    const positions = [
-      { top: '100px', left: '62%' },
-      { top: '520px', left: '18%' },
-      { top: '940px', left: '60%' },
-      { top: '1360px', left: '25%' },
-      { top: '1780px', left: '60%' }
-    ];
-
-    const events = [
-      {
-        title: "Orientation Day",
-        date: "Sept 1, 2024",
-        year: "2024",
-        description: "Meeting new friends and exploring campus for the first time.",
-        image: "https://source.unsplash.com/featured/?students,campus"
-      },
-      {
-        title: "First Lecture",
-        date: "Sept 3, 2024",
-        year: "2024",
-        description: "Excited and nervous as the college life officially begins.",
-        image: "https://source.unsplash.com/featured/?lecture,classroom"
-      },
-      {
-        title: "Coffee Breaks",
-        date: "Sept 15, 2024",
-        year: "2024",
-        description: "Favorite study spot with my go-to coffee order.",
-        image: "https://source.unsplash.com/featured/?coffee,study"
-      },
-      {
-        title: "College Fest",
-        date: "Oct 10, 2024",
-        year: "2024",
-        description: "Vibrant atmosphere, music, and a lot of dancing!",
-        image: "https://source.unsplash.com/featured/?college,festival"
-      },
-      {
-        title: "Group Project",
-        date: "Nov 5, 2024",
-        year: "2024",
-        description: "Late nights, teamwork, and the sweet joy of submission.",
-        image: "https://source.unsplash.com/featured/?students,project"
-      }
-    ];
-
     const timeline = document.getElementById("timeline");
 
     events.forEach((event, index) => {
